@@ -3,7 +3,7 @@
 /* =====================================================
  * change this to the email you want the form to send to
  * ===================================================== */
-$email_to = "your_email@email.com";
+$email_to = "joesusnick@gmail.com";
 $email_subject = "Contact Form submitted";
 
 if(isset($_POST['email']))

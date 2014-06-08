@@ -31,8 +31,9 @@ function initialise_document_ready_functions()
       interval: 6000
     });
 
+    // Disabled forms to Use custom script
     // initialise form validation and submit functions 
-    validate_and_submit_forms();
+    //    validate_and_submit_forms();
 
     // ------ Owl Carousel ------
     // Initialise Owl Carousels with common class .popup-image-gallery when popup is opened
