@@ -101,7 +101,8 @@ p {
 }
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
-.btn-outline-inverse:active {
+.btn-outline-inverse:active,
+.btn-outline-inverse.disabled {
   color: #000;
   text-shadow: none;
   background-color: #fff;
