@@ -29,6 +29,12 @@
   </head>
 
   <body>
+    <!-- displays while page loads -->
+
+    <div id="loading">
+      <h1></h1>
+      <!-- <img id="loading-image" src="" alt="Loading..." /> -->
+    </div>
 
     <div class="background-image-overlay"></div>
 
@@ -168,22 +174,6 @@
                     </div>
                   </div><!-- .item -->
 
-                  <!--<div class="item">-->
-                    <!--<div class="carousel-text-content">-->
-                      <!--<img src="assets/images/other_images/transp-image4.png" class="icon" alt="Lorem Ipsum">-->
-                      <!--<h2 class="title">Sed scelerisque</h2>-->
-                      <!--<p>Aenean a est fringilla, malesuada eros vel, condimentum augue. Sed lorem sapien, vestibulum quis nisl volutpat, fermentum adipiscing massa. Cras ac faucibus nisl. Proin ac convallis sapien. </p>-->
-                      <!--<p><a href="" onclick="populate_and_open_modal(event, 'modal-content-5');" class="btn btn-outline-inverse btn-sm">read more</a></p>-->
-
-                      <!--<div class="content-to-populate-in-modal" id="modal-content-5">-->
-                        <!--<h1>Sed scelerisque</h1>-->
-                        <!--<p><img data-img-src="assets/images/other_images/transp-image4.png" class="lazy rounded_border hover_effect pull-left" alt="Lorem Ipsum">Etiam at ligula sit amet arcu laoreet consequat. Duis dictum lorem metus, vitae dapibus risus imperdiet nec. <a href="#">Suspendisse molestie lorem odio</a>, sit amet. </p>-->
-                        <!--<p>Laoreet consequat. Duis dictum lorem metus, vitae dapibus risus imperdiet nec. Suspendisse molestie lorem odio, sit amet.</p>-->
-                        <!--<p>Suspendisse molestie lorem odio, sit amet. Duis dictum lorem metus, vitae dapibus risus imperdiet nec. Suspendisse molestie lorem odio test.</p>-->
-                      <!--</div>&lt;!&ndash; #modal-content-5 &ndash;&gt;-->
-                    <!--</div>-->
-                  <!--</div>&lt;!&ndash; .item &ndash;&gt;-->
-
                 </div><!-- .carousel-inner -->
 
                 <!-- Controls -->
@@ -306,29 +296,6 @@
                     </div><!-- #modal-content-7 -->
                   </article>
 
-                  <!--<!-- feature 3 -->
-                  <!--<article class="feature-col col-md-4">-->
-                    <!--<a href="" onclick="populate_and_open_modal(event, 'modal-content-8');" class="thumbnail linked">-->
-                      <!--<div class="image-container">-->
-                        <!--<img data-img-src="assets/images/other_images/google-wallet.png" class="lazy item-thumbnail" alt="Lorem Ipsum">-->
-                      <!--</div>-->
-                      <!--<div class="caption">-->
-                        <!--<h5>Google Wallet</h5>-->
-                        <!--<p>Another alternative in case you have trouble with the others.</p>-->
-                      <!--</div><!-- .caption -->
-                    <!--</a><!-- .thumbnail -->
-
-                    <!--<div class="content-to-populate-in-modal" id="modal-content-8">-->
-                      <!--<a href="www.google.com/wallet">-->
-                      <!--<h1>Google Wallet</h1><img src="assets/images/other_images/google-wallet-icon.png" alt="google wallet icon"></a>-->
-                      <!--<p>Neither of us have used this so we can't speak to ease of use but we've heard it's pretty straightforward.</p>-->
-                      <!--<p>Again, it doesn't require you to link to a bank account and it doesn't take fees from your gift.</p>-->
-                      <!--<p>You can use either of our email addresses, <a href="mailto:joesusnick@gmail.com?subject=How-does-this-work?">joesusnick@gmail.com</a>, or-->
-                        <!--<a href="mailto:ruudallison@gmail.com?subject=How-does-this-work?">ruudallison@gmail.com</a>.</p>-->
-                    <!--</div><!-- #modal-content-8 -->
-
-                  <!--</article>-->
-
                 </section><!-- end: .feature-columns -->
 
               <!-- End: Section content to edit -->
@@ -344,7 +311,7 @@
               
                 <!-- CONTACT DETAILS -->
                 <div class="contact-details col-sm-5 col-md-3">
-                  <p>Apt #5<br/>1259 York St,<br/>Denver<br/>CO<br/>80206</p>
+                  <p>4550 Batavia Pl<br/>Denver<br/>CO<br/>80220</p>
                   <a href="tel:7205059533"><p> (720) 505 9533</p></a>
                   <p><a href="mailto:ruudallison@gmail.com">ruudallison@gmail.com</a></p>
                 </div>
@@ -394,12 +361,6 @@
         <!-- Go to Top -->
         <div id="go-to-top" onclick="scroll_to_top();"><span class="icon glyphicon glyphicon-chevron-up"></span></div>
 
-        <!--<ul class="social-icons">-->
-          <!--<li><a href="#" target="_blank" title="Facebook"><img src="assets/images/theme_images/social_icons/facebook.png" alt="Facebook"></a></li>-->
-          <!--<li><a href="#" target="_blank" title="Twitter"><img src="assets/images/theme_images/social_icons/twitter.png" alt="Twitter"></a></li>-->
-          <!--<li><a href="#" target="_blank" title="Google+"><img src="assets/images/theme_images/social_icons/googleplus.png" alt="Google+"></a></li>-->
-        <!--</ul>-->
-
         <!-- copyright text -->
         <div class="footer-text-line">Joe <span class="glyphicon glyphicon-heart"></span> Allison</div>
       </section>
@@ -440,9 +401,13 @@
     <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-      jQuery("#outer-background-container").backstretch("assets/images/other_images/bg5.jpg");
 
+    $(window).load(function(){
+      jQuery("#outer-background-container").backstretch("assets/images/other_images/rocky-mountains-bg.png");
+
+      $('#loading').hide();
+      $('body').css('overflow', 'visible');
+      
       var email = new Firebase('https://allison-and-joe.firebaseio.com/emails');
       var messages = email.push();
 
